@@ -1,5 +1,5 @@
 from floodsystem.stationdata import build_station_list
-from floodsystem.geo import inconsistent_typical_range_stations
+from floodsystem.station import inconsistent_typical_range_stations
 
 def run():
     stations = build_station_list()
