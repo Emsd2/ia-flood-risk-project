@@ -82,7 +82,3 @@ def rivers_by_station_number(stations, N):
     return number_stations_list
 
     
-    
-    
-
-        
