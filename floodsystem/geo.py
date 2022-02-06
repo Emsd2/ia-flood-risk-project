@@ -8,12 +8,12 @@ geographical data.
 
 from .utils import sorted_by_key  # noqa
 
-
 def stations_within_radius(stations, centre, r):
     stationslist = stations_by_distance(stations, centre)
     counter = 0 
-    while stationslist[:counter][1] < r: 
+    while stationslist[counter][1] < r:
         stations.append(stationslist[counter][0])
+        counter = counter +1
     return stations
 
 
@@ -33,6 +33,8 @@ def stations_by_distance(stations, p):
     #sorted_by_key(stations_list, 1)
     stations_list.sort(key = lambda a:a[1])
     return  stations_list
+
+
 
 
 
