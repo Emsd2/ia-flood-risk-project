@@ -2,6 +2,7 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import stations_within_radius
 
 def run():
+
     #list of stations
     stations = build_station_list()
     #finding the stations that are within required radius of 10km of the Cambridge City centre
@@ -9,7 +10,7 @@ def run():
     #sorting the stations in alphabetical order
     station_list = []
     for station in stations_required:
-        #use a list to sort the stations
+        #using a list to be able to sort the stations
         station_list.append(station)
     print(sorted(station_list))
     
