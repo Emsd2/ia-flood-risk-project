@@ -77,8 +77,8 @@ def rivers_by_station_number(stations, N):
         number_of_stations = len(stations_river[river])
         number_list.append((river, number_of_stations))
     #To sort a list of tuples by the second element of the tuple and so that the list is in descending order
-    #sorted_by_key(number_list, 1, reverse = True)
-    number_list.sort(key = lambda a:a[1], reverse = True)
+    sorted_by_key(number_list, 1, reverse = True)
+    #number_list.sort(key = lambda a:a[1], reverse = True)
 
     counter = 0
     number_stations_list = []
