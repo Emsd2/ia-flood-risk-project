@@ -37,9 +37,6 @@ def stations_by_distance(stations, p):
     return  stations_list
 
 
-
-
-
 def rivers_with_station(stations):
     rivers = []
     for station in stations:
@@ -90,7 +87,7 @@ def rivers_by_station_number(stations, N):
         counter = counter +1
 
     for station in number_list:
-        if station[1] == number_list[counter-1][1]:
+        if station[1] == number_list[counter-1][1] and station[0] != number_list[counter-1][0]:
             number_stations_list.append(station)
 
     return number_stations_list
