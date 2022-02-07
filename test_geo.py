@@ -22,19 +22,20 @@ def test_stations_by_distance():
 def test_stations_within_radius():
     stations_list = stations_within_radius(stations, (0,0), 400)
     assert type(stations_list) == list
-    assert len(stations_list) == 2
+    assert stations_list == ["station1", "station2"]
 
 def test_rivers_with_station():
     rivers_list = rivers_with_station(stations)
     assert type(rivers_list) == list
-    assert len(rivers_list) == 3
+    assert rivers_list == ["riverA", "riverB", "riverC"]
 
 def test_stations_by_river():
     rivers_list = stations_by_river(stations)
     assert type(rivers_list) == dict
-    assert len(rivers_list) == 3
+    assert rivers_list == {"riverA": ["station1", "station2"], "riverB": ["station3", "station4"], "riverC": ["station5"]}
 
 def test_rivers_by_station_number():
     stations_list = rivers_by_station_number(stations, 1)
     assert type(stations_list) == list
-    assert len(stations_list) == 2 
+    assert type(stations_list[0]) == tuple
+    assert stations_list == [("riverA", 2), ("riverB", 2)]
