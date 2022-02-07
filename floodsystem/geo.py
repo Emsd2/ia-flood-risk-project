@@ -7,6 +7,19 @@ geographical data.
 """
 
 from .utils import sorted_by_key  # noqa
+
+
+def stations_within_radius(stations, centre, r):
+    stationslist = stations_by_distance(stations, centre)
+
+    stations = []
+    for station in stationslist:
+        if station[1] <= r:
+            stations.append(station[0])
+
+    return stations
+
+
 from haversine import haversine
 
 def stations_by_distance(stations, p):
@@ -82,3 +95,7 @@ def rivers_by_station_number(stations, N):
     return number_stations_list
 
     
+    
+
+        
+
