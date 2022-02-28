@@ -21,7 +21,7 @@ def run():
                                              dt=datetime.timedelta(days=dt))
         p = 4
         if len(dates) == 0 or len(levels) == 0:
-            print("There is no data in the past 10 days for" , station.name)
+            print("There is no data in the past 2 days for" , station.name)
             continue
         else:
             plot_water_level_with_fit(station, dates, levels, p)
