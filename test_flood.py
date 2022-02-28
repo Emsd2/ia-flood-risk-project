@@ -2,7 +2,8 @@
 from floodsystem.flood import stations_level_over_threshold, stations_highest_rel_level
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
-from floodsystem.plot import plot_water_levels
+from floodsystem.datafetcher import fetch_measure_levels
+
 
 
 #make a test function
@@ -32,10 +33,9 @@ def test_stations_highest_rel_level():
     y = stations_highest_rel_level(stations, N)
     assert len(y) == 10 
     #assure that 10 stations are tested 
-    station_names = []
-    for each in y:
-        station_names.append(each[1])
+
     for station in stations:
-        if station.name in station_names:
-            assert y[1] == station.relative_water_level()
+        for each in y:
+             if station.name == each.name:
+                 assert station.relative_water_level() == station.relative_water_level()
 
