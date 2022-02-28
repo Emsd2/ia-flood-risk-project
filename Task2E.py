@@ -14,20 +14,17 @@ def run():
     N = 5
     station_list = stations_highest_rel_level(stations, N)
 
-    #Creates a list of the all the station data for the 5 most flooded stations
-    greatest_stations = []
-    for station1 in station_list:
-        for station2 in stations:
-            if station2.name == station1[0]:
-                greatest_stations.append(station2)
-
-
-    for station in greatest_stations:
+    
+    for station in station_list:
 
         dt = 10
         dates, levels = fetch_measure_levels(station.measure_id,
                                              dt=datetime.timedelta(days=dt))
-        plot_water_levels(station, dates, levels)
+        if len(dates) == 0 or len(levels) == 0:
+            print("There is no data in the past 10 days for" , station.name)
+            continue
+        else:
+            plot_water_levels(station, dates, levels)
 
 
 
