@@ -21,6 +21,7 @@ def run():
         dates, levels = fetch_measure_levels(station.measure_id,
                                              dt=datetime.timedelta(days=dt))
         if len(dates) == 0 or len(levels) == 0:
+            print("There is no data in the past 10 days for" , station.name)
             continue
         else:
             plot_water_levels(station, dates, levels)
